@@ -50,11 +50,11 @@ body::after {
   opacity: 0.08;          /* very faint, sits over everything */
   z-index: 9999;          /* above all content */
   pointer-events: none;   /* clicks pass through */
-}   
 .wrap, header, section, footer {
   position: relative;
-  z-index: 1; /* ensures text is above watermark */
-}
+  z-index: 1;
+  background: transparent;  /* ← lets the watermark show through */
+}   
   h1,h2,h3{font-family:'Source Serif 4', Georgia, serif; font-weight:500; margin:0; letter-spacing:-0.01em;}
   p{margin:0; line-height:1.65;}
   a{color:inherit;}
