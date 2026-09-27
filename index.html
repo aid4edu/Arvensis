@@ -31,13 +31,13 @@
   }
   *{box-sizing:border-box;}
   html{scroll-padding-top: env(safe-area-inset-top, 0px);}
-bbody {
+body {
   margin: 0;
-  background: var(--paper); /* just the color */
+  background: var(--paper) url('hp.png') no-repeat center center;
+  background-size: contain; /* or cover */
   color: var(--ink);
   font-family: 'IBM Plex Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  position: relative; /* allows layering */
 }
 
 body::after {
