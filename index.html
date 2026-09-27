@@ -31,22 +31,26 @@
   }
   *{box-sizing:border-box;}
   html{scroll-padding-top: env(safe-area-inset-top, 0px);}
-  body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:'IBM Plex Sans', Arial, sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-    body::before {
-      content: "";
-      position: fixed;       /* stays fixed while scrolling */
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('hp.png') no-repeat center center;
-      background-size: cover;
-      opacity: 0.15;         /* faint watermark effect */
-      z-index: -1;           /* behind all content */
-      pointer-events: none;  /* prevents blocking clicks */
-    }
+  body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative; /* important */
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('hp.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.15;       /* faint watermark */
+  z-index: 0;          /* behind content */
+  pointer-events: none;
+}
   h1,h2,h3{font-family:'Source Serif 4', Georgia, serif; font-weight:500; margin:0; letter-spacing:-0.01em;}
   p{margin:0; line-height:1.65;}
   a{color:inherit;}
