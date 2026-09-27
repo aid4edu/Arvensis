@@ -31,15 +31,14 @@
   }
   *{box-sizing:border-box;}
   html{scroll-padding-top: env(safe-area-inset-top, 0px);}
-  body {
+ body {
   margin: 0;
-  background: var(--paper) url('hp.png') no-repeat center center;
-  background-size: cover;
+  background: var(--paper);
   color: var(--ink);
   font-family: 'IBM Plex Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  position: relative; /* allows layering */
 }
-
 
 body::after {
   content: "";
@@ -49,9 +48,15 @@ body::after {
   background: url('hp.png') no-repeat center center;
   background-size: cover;
   opacity: 0.15;       /* faint watermark */
-  z-index: 0;          /* behind content */
+  z-index: 0;          /* sits behind content */
   pointer-events: none;
 }
+
+.wrap, header, section, footer {
+  position: relative;
+  z-index: 1; /* ensures text is above watermark */
+}
+
   h1,h2,h3{font-family:'Source Serif 4', Georgia, serif; font-weight:500; margin:0; letter-spacing:-0.01em;}
   p{margin:0; line-height:1.65;}
   a{color:inherit;}
