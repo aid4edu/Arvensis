@@ -12,7 +12,7 @@
 <style>
   :root{
     --ink:#10192B;
-    --paper:#EDE9DE;
+    --transparent:rgba(0, 0, 0, 0);
     --paper-2:#E4DFCF;
     --gold:#B08A3E;
     --slate:#3B3F45;
@@ -33,7 +33,7 @@
   html{scroll-padding-top: env(safe-area-inset-top, 0px);}
 body {
   margin: 0;
-  background: var(--paper); /* just the color */
+  background: rgba(0, 0, 0, 0); /* just the color */
   color: var(--ink);
   font-family: 'IBM Plex Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +48,7 @@ body::after {
   background: url('hp.png') no-repeat center center;
   background-size: contain; /* or cover, depending on effect */
   opacity: 0.15;            /* faint watermark */
-  z-index: 0;               /* behind content */
+  z-index: 1;               /* behind content */
   pointer-events: none;
 }
 
